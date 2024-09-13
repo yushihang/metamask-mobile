@@ -220,12 +220,14 @@ buildAndroidRunFlask(){
 }
 
 buildIosSimulator(){
+  echo "buildIosSimulator"
 	prebuild_ios
 	if [ -n "$IOS_SIMULATOR" ]; then
 		SIM_OPTION="--simulator \"$IOS_SIMULATOR\""
 	else
 		SIM_OPTION=""
 	fi
+  echo "WATCHER_PORT $WATCHER_PORT"
 	react-native run-ios --port=$WATCHER_PORT $SIM_OPTION
 }
 
